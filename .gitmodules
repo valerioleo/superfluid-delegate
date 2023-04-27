@@ -1,0 +1,3 @@
+[submodule "src/js/contracts/reference/lib/solmate"]
+	path = src/js/contracts/reference/lib/solmate
+	url = https://github.com/transmissions11/solmate
