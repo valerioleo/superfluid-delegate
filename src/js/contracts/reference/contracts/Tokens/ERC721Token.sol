@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.14;
 
-import '@openzeppelin/contracts/token/ERC721/ERC721.sol';
-import "@openzeppelin/contracts/utils/Counters.sol";
+import 'openzeppelin-contracts/token/ERC721/ERC721.sol';
+import "openzeppelin-contracts/utils/Counters.sol";
 
 contract ERC721Token is ERC721 {
 	using Counters for Counters.Counter;
