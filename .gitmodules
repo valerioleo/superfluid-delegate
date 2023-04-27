@@ -7,3 +7,6 @@
 [submodule "src/js/contracts/reference/lib/openzeppelin-contracts"]
 	path = src/js/contracts/reference/lib/openzeppelin-contracts
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "src/js/contracts/reference/lib/protocol-monorepo"]
+	path = src/js/contracts/reference/lib/protocol-monorepo
+	url = https://github.com/superfluid-finance/protocol-monorepo
