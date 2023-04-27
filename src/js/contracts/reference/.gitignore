@@ -1,6 +1,9 @@
 coverage.json
 typechain-types
 
+#Foundry files
+out
+
 #Hardhat files
 cache
 artifacts
