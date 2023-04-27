@@ -10,3 +10,6 @@
 [submodule "src/js/contracts/reference/lib/protocol-monorepo"]
 	path = src/js/contracts/reference/lib/protocol-monorepo
 	url = https://github.com/superfluid-finance/protocol-monorepo
+[submodule "src/js/contracts/reference/lib/delegation-registry"]
+	path = src/js/contracts/reference/lib/delegation-registry
+	url = https://github.com/delegatecash/delegation-registry
