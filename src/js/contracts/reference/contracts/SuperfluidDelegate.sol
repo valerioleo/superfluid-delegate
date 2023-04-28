@@ -1,28 +1,32 @@
-pragma solidity >= 0.8.0;
+pragma solidity ^0.8.0;
 import '@openzeppelin/contracts/token/ERC721/ERC721.sol';
 import '@openzeppelin/contracts/access/Ownable.sol';
 
 import {ISuperfluid, ISuperToken, ISuperApp, ISuperAgreement, SuperAppDefinitions} from "@superfluid-finance/ethereum-contracts/contracts/interfaces/superfluid/ISuperfluid.sol";
+import { SuperTokenV1Library } from "@superfluid-finance/ethereum-contracts/contracts/apps/SuperTokenV1Library.sol";
+import {IDelegationRegistry} from "delegation-registry/IDelegationRegistry.sol";
+import {SuperAppBaseFlow} from "./Superfluid/SuperAppBaseFlow.sol";
 
 /**
     1. There needs to be a contract that OWNS the NFT that we want to delegate (we call it vault)
     2. The vault MUST be notified when a stream is closed, so to trigger the revokeDelegate function on DelegateCash contract
-    3. To open a 
+    3. To open a
     4. Once the stream is open, the funds are sent to the ESCROW, but either relayed with another stream to the
         OWNER or the ESCROW offers a withdraw() function
 */
 
-contract SupefluidDelegate is Ownable {
+contract SupefluidDelegate is Ownable, SuperAppBaseFlow {
   using SuperTokenV1Library for ISuperToken;
   IDelegationRegistry public delegationRegistry;
+  ISuperToken public cashToken;
 
   constructor(
           ISuperToken _cashToken, // super token to be used
           IDelegationRegistry _delegationRegistry // delegate.cash registry
       ) SuperAppBaseFlow(
           ISuperfluid(_cashToken.getHost()), // this creates the host
-          true, 
-          true, 
+          true,
+          true,
           true
       ) {
           delegationRegistry = _delegationRegistry; // this is the delegate.cash registry
@@ -35,7 +39,7 @@ contract SupefluidDelegate is Ownable {
 //     // let's deposit the NFT
 //     ERC721(nftAddress).transferFrom(msg.sender, address(this), tokenId);
 //   }
-  
+
 //   function withdrawNFTFromDelecation(address nftAddress, uint256 tokenId) onlyOwner onlyIfNotDelegated external {
 //     // let's deposit the NFT
 //     require(
@@ -49,7 +53,7 @@ contract SupefluidDelegate is Ownable {
 //     // to implement
 //     return true;
 //   }
-  
+
 //   function _getDataFromSignature(bytes memory signature) internal view returns (address, uint256) {
 //     // to implement
 //     return (address(this), 0);
@@ -92,7 +96,7 @@ contract SupefluidDelegate is Ownable {
 //         bytes calldata beforeData,
 //         bytes calldata ctx
 //     ) internal override returns (bytes memory) {
-        
+
 
 //         delegationRegistry.revokeAllDelegates();
 //     }
