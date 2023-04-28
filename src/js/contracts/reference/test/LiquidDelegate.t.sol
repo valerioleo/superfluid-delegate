@@ -1,12 +1,11 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.19;
 
 import {Test} from "forge-std/Test.sol";
 import {console2} from "forge-std/console2.sol";
 import {MockERC721} from "solmate/test/utils/mocks/MockERC721.sol";
 import {DelegationRegistry} from "delegation-registry/DelegationRegistry.sol";
-
-import {LiquidDelegate} from "../src/LiquidDelegate.sol";
+import {LiquidDelegate} from "liquid-delegate/LiquidDelegate.sol";
 
 contract LiquidDelegateTest is Test {
     string public constant baseURI = "test";

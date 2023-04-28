@@ -1,6 +1,6 @@
 pragma solidity ^0.8.0;
-import '@openzeppelin/contracts/token/ERC721/ERC721.sol';
-import '@openzeppelin/contracts/access/Ownable.sol';
+import 'openzeppelin-contracts/contracts/token/ERC721/ERC721.sol';
+import 'openzeppelin-contracts/contracts/access/Ownable.sol';
 
 import {ISuperfluid, ISuperToken, ISuperApp, ISuperAgreement, SuperAppDefinitions} from "@superfluid-finance/ethereum-contracts/contracts/interfaces/superfluid/ISuperfluid.sol";
 import { SuperTokenV1Library } from "@superfluid-finance/ethereum-contracts/contracts/apps/SuperTokenV1Library.sol";
