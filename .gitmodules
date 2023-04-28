@@ -13,3 +13,6 @@
 [submodule "src/js/contracts/reference/lib/delegation-registry"]
 	path = src/js/contracts/reference/lib/delegation-registry
 	url = https://github.com/delegatecash/delegation-registry
+[submodule "src/js/contracts/reference/lib/liquid-delegate"]
+	path = src/js/contracts/reference/lib/liquid-delegate
+	url = https://github.com/delegatecash/liquid-delegate
